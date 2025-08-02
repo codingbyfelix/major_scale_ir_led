@@ -12,4 +12,4 @@ The repository contains the following folders:
 
 ## Installation
 ```bash
-git clone <repository-url>
+git clone https://github.com/codingbyfelix/major_scale_ir_led.git
