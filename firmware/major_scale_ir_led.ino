@@ -3,7 +3,7 @@
 const int IR_RECEIVE_PIN = 15; // G15 IR_Receive Pin
 const int BUZZER_PIN = 13; // G13 Passive Buzzer Pin 
 
-// Frequenzen von C4 bis D5 (C-D-E-F-G-A-H-C-D)
+// Frequencies from C4 bis D5 (C-D-E-F-G-A-H-C-D)
 int notes[] = {261, 294, 330, 349, 392, 440, 494, 523, 587}; // C4–D5
 
 // LED-Pins fitting to the 8 sounds
@@ -31,7 +31,7 @@ void setup() {
   Serial.begin(115200);
   IrReceiver.begin(IR_RECEIVE_PIN, ENABLE_LED_FEEDBACK);
 
-  // Buzzer konfigurieren
+  // Configuring passive buzzer
   ledcAttach(BUZZER_PIN, 1000, 8);
 
   // Configuring LEDs
@@ -75,7 +75,7 @@ int melody[] = {
     int freq = melody[i];
     int ledIndex = -1;
 
-    // Finde passende LED zur Frequenz
+    // Find a fitting LED to frequency
     for (int j = 0; j < NUM_LEDS; j++) {
       if (notes[j] == freq) {
         ledIndex = j;
@@ -118,7 +118,7 @@ void loop() {
           Serial.println(i);
 
           if (currentNote != i - 1) {
-            stopTone(); // Vorherige LED ausschalten
+            stopTone(); // Stop LED that glowed before
             playTone(notes[i - 1], i - 1);
             currentNote = i - 1;
           }
@@ -131,7 +131,7 @@ void loop() {
     IrReceiver.resume();
   }
 
-  // Timeout: Ton stoppen, wenn Taste losgelassen wurde (>200ms)
+  // Timeout: Stop tone when button was released (>200ms)
   if (currentNote != -1 && millis() - lastReceiveTime > 200) {
     stopTone();
   }
