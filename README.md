@@ -1,16 +1,15 @@
 ## Major Scale IR LED Project
 
-Das ist ein **C++ Projekt**, bei dem man mit einer Fernbedienung die 
-verschiedenen Töne einer **C-Dur Tonleiter** abspielen kann. 
-Bei der Taste 0 wird das Lied "Happy Birthday" abgespielt
+This is a **C++ project** that allows you to play the different notes of a **C major scale** using a remote control.  
+Pressing button **0** will play the song **"Happy Birthday"**.
 
-Dieses Projekt ist in **C++** programmiert mit einem **ESP32-Microcontroller**.
+The project is written in **C++** for an **ESP32 microcontroller**.
 
-Es gibt folgende Ordner im Repository:
-- docs mit dem .pdf-Dokument der Schaltung
-1. firmware mit der C++ Arduino Datei
-2. **hardware** mit den **KiCAD** **pcb** und **sch** Dokumenten
+The repository contains the following folders:
+- `docs` – includes the PDF document of the circuit
+- `firmware` – contains the Arduino C++ source code
+- `hardware` – contains the **KiCad** PCB (`.pcb`) and schematic (`.sch`) files
 
-## Installation 
+## Installation
 ```bash
-git clone  
+git clone <repository-url>
