@@ -6,7 +6,7 @@ const int BUZZER_PIN = 13; // G13 Passive Buzzer Pin
 // Frequenzen von C4 bis D5 (C-D-E-F-G-A-H-C-D)
 int notes[] = {261, 294, 330, 349, 392, 440, 494, 523, 587}; // C4–D5
 
-// LED-Pins passend zu den 8 Tönen
+// LED-Pins fitting to the 8 sounds
 const int NUM_LEDS = 9;
 int ledPins[NUM_LEDS] = {16, 17, 18, 19, 21, 22, 23, 25, 26}; // LED Pins G16, G17, G18, G19, G21, G22, G23, G25, G26 
 
@@ -34,7 +34,7 @@ void setup() {
   // Buzzer konfigurieren
   ledcAttach(BUZZER_PIN, 1000, 8);
 
-  // LEDs konfigurieren
+  // Configuring LEDs
   for (int i = 0; i < NUM_LEDS; i++) {
     pinMode(ledPins[i], OUTPUT);
     digitalWrite(ledPins[i], LOW);
